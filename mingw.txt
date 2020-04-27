@@ -1,0 +1,17 @@
+
+---------------------------------
+como instalar fortran com mingw
+---------------------------------
+
+mingw base system
+
+msys
+
+mingw-developer-toolkit-bin
+msys-autogen-bin
+msys-base-bin
+msys-bash-bin
+msys-bison-bin
+msys-bsdcpio-bin
+msys-bsdtar-bin
+msys-bzip2-bin
