@@ -1,2 +1,2 @@
-# notes
-how to do some stuff I always forget
+# misc_guides
+miscelaneous guides for myself
