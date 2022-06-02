@@ -1,14 +1,14 @@
 
-# --- instalar o miniconda
+# 1 instalar o miniconda
 
-# --- inclui e define conda-forge como canal prioritario
+# 2 inclui e define conda-forge como canal prioritario
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 
-# -- atualiza conda
+# 3 atualiza conda
 conda update conda
 
-# --- comandos de consulta geral
+# 4 comandos de consulta geral
 # ver informacoes
 conda info
 
@@ -18,14 +18,9 @@ conda info --envs
 # listar pacotes/biblitoecas
 conda list
 
-# instalar pacotes
-conda install <package-name>
 
-
-# --- o ideal é evitar ficar no ambiente root (/base)!
-
-
-# --- para criar um ambiente novo, chamado 'myenv'
+# 5 o ideal é evitar ficar no ambiente root (/base)!
+# para criar um ambiente novo, chamado 'myenv'
 
 # exemplo 1: com python 3.7 exatamente (==)
 conda create --name myenv python==3.7
@@ -36,12 +31,26 @@ conda create --name myenv python==3.7
 # exemplo 3: com python 3 mais atual
 conda create --name myenv python=3
 
-# --- para ativar o ambiente
+# exemplo 4: com python 3 mais atual, utilizando o conda-forge (recomendado)
+conda create -n myenv python=3 -c conda-forge
+
+# observacao: '--name' é igual a '-n'
+
+# 6 trabalhar no ambiente novo
+# para ativar o ambiente
 conda activate myenv
 
-# --- para desativar o ambiente atual
+# para desativar o ambiente atual
 conda deactivate
 
+# 7 comandos para gerir ambientes
+# apagar
+conda env remove --name myenv
+
+
+# 8 instalar pacotes
+conda install <package-name>
+conda install <package-name> -c conda-forge
 
 
 
