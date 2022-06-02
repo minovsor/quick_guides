@@ -10,15 +10,21 @@
 conda create -n geo python=3.9
 conda activate geo
 conda install -c conda-forge mamba
-mamba install geopandas
+#mamba install geopandas
+#mamba install -c conda-forge geospatial
+
+# tentar esse (caso geopandas venha do conda-forge por prioridade)
+mamba install -c defaults --override-channels geopandas
 mamba install -c conda-forge geospatial
 
-
-#update
+# update
 conda update -c conda-forge geospatial
 
+# -- possiveis problemas com pyprok
 https://pyproj4.github.io/pyproj/stable/gotchas.html#internal-proj-error-sqlite-error-on-select
-
-# dirty way
+# solucao dirty way
 conda remove --force pyproj
 pip install pyproj
+
+# instala spyder
+conda install spyder -c conda-forge
