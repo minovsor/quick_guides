@@ -14,6 +14,9 @@ mamba install geopandas
 mamba install -c conda-forge geospatial
 
 
+#update
+conda update -c conda-forge geospatial
+
 https://pyproj4.github.io/pyproj/stable/gotchas.html#internal-proj-error-sqlite-error-on-select
 
 # dirty way
