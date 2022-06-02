@@ -15,3 +15,7 @@ mamba install -c conda-forge geospatial
 
 
 https://pyproj4.github.io/pyproj/stable/gotchas.html#internal-proj-error-sqlite-error-on-select
+
+# dirty way
+conda remove --force pyproj
+pip install pyproj
