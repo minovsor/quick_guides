@@ -1,14 +1,21 @@
-
+#-------------------------------------
 # 1 instalar o miniconda
+#-------------------------------------
 
+#-------------------------------------
 # 2 inclui e define conda-forge como canal prioritario
+#-------------------------------------
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 
+#-------------------------------------
 # 3 atualiza conda
+#-------------------------------------
 conda update conda
 
+#-------------------------------------
 # 4 comandos de consulta geral
+#-------------------------------------
 # ver informacoes
 conda info
 
@@ -18,8 +25,9 @@ conda info --envs
 # listar pacotes/biblitoecas
 conda list
 
-
+#-------------------------------------
 # 5 o ideal é evitar ficar no ambiente root (/base)!
+#-------------------------------------
 # para criar um ambiente novo, chamado 'myenv'
 
 # exemplo 1: com python 3.7 exatamente (==)
@@ -31,24 +39,36 @@ conda create --name myenv python==3.7
 # exemplo 3: com python 3 mais atual
 conda create --name myenv python=3
 
-# exemplo 4: com python 3 mais atual, utilizando o conda-forge (recomendado)
+(recomendado a seguir)
+# exemplo 4: com python 3 mais atual do conda-forge
 conda create -n myenv python=3 -c conda-forge
 
-# observacao: '--name' é igual a '-n'
+(observacao: '--name' é igual a '-n')
 
+#-------------------------------------
 # 6 trabalhar no ambiente novo
-# para ativar o ambiente
+#-------------------------------------
+# ativar o ambiente
 conda activate myenv
 
-# para desativar o ambiente atual
+# desativar o ambiente
 conda deactivate
 
-# 7 comandos para gerir ambientes
+#-------------------------------------
+# 7 instalar IDE spyder
+#-------------------------------------
+conda install spyder -c conda-forge
+
+
+#-------------------------------------
+# 8 comandos para gerir ambientes
+#-------------------------------------
 # apagar
 conda env remove --name myenv
 
-
-# 8 instalar pacotes
+#-------------------------------------
+# 9 instalar pacotes
+#-------------------------------------
 conda install <package-name>
 conda install <package-name> -c conda-forge
 
