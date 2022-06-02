@@ -1,0 +1,14 @@
+# instrucoes do video https://www.youtube.com/watch?v=Y1xB7d2VbFY
+
+# cria ambiente 'geo' com python 3.9
+# ativa o ambiente
+# instalar o gerenciador de pacotes mamba 
+# utilizar o mamba, ao inves do conda para a instalacao
+# instala o geopandas do canal oficial (devido algumas dependencias)
+# instala o geospatial do canal do conda-forge
+
+conda create -n geo python=3.9
+conda activate geo
+conda install -c conda-forge mamba
+mamba install geopandas
+mamba install -c conda-forge geospatial
