@@ -1,0 +1,20 @@
+# make new password in Ubuntu/Windows WLS
+
+# abrir o wls, anotar <nome_usuario> que esta no terminal <nome_usuario>@<nome_pc>$
+
+# no prompt do windows, altera o usuario do wls para root
+ubuntu1804 config --default-user root
+
+# ainda no prompt do windows, abre o wls
+>ubuntu1804
+
+# cadastramos nova senha do usario
+>passwd <nome_usuario>
+**vai pedir a senha nova
+
+# reconfiguramos o wls para o usuario
+ubuntu1804 config --default-user <nome_usuario>
+
+# fechar o wls no prompt do windows
+
+# pode abrir o wls :)
