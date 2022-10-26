@@ -16,11 +16,12 @@ Congratulations! You just built a plugin for QGIS!
 
 
 Your plugin BHO2MGB_RainToGauge was created in:
-  C:/Users/Avell/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins\bho2mgb_raintogauge 
+  C:/Users/Avell/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins\<plugin_name>
 Your QGIS plugin directory is located at:
   C:/Users/Avell/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins 
 What's Next
 If resources.py is not present in your plugin directory, compile the resources file using pyrcc5 (simply use pb_tool or make if you have automake) 
+
 Optionally, test the generated sources using make test (or run tests from your IDE) 
 Copy the entire directory containing your new plugin to the QGIS plugin directory (see Notes below) 
 Test the plugin by enabling it in the QGIS plugin manager 
