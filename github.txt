@@ -1,0 +1,47 @@
+
+
+
+## iniclaiza (se nao existe
+git init
+
+## seleciona branch
+git branch <nome do branch>
+
+## adiciona todos arquivos
+git add .
+
+## aplica o commit dos dados locais
+git commit -m 'First commit'
+
+## inclui pasta como repositorio local
+fit remote add origin <remore repository URL>
+
+
+## lista os enderecos
+git remote -v
+
+## faz o push do commit
+git push origin <branch name>
+
+## faz o push do commit adicionando as alteracoes
+git commit -a -m 'First commit'
+
+
+
+## push do commit com erro de historico:
+"There isn’t anything to compare."
+
+1) git merge origin/main --allow-unrelated-histories
+
+2) git push -u origin master -f
+
+
+
+## branch -> cria um branch
+git branch novo_branch
+git checkout novo_branch
+git merge origin/main --allow-unrelated-histories
+
+## checkout -> muda o branch de trabalho
+git checkout master
+
