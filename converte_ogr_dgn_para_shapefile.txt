@@ -1,0 +1,11 @@
+
+OGR: CONVERSAO DE DGN PARA SHAPEFILE
+
+1-  COMANDO OGR PARA CONVERTER GEOMETRIAS DE PONTO
+
+
+ogr2ogr -f "ESRI Shapefile" -where "OGR_GEOMETRY='Point'" -f "ESRI Shapefile" -skipfailures convertido_pontos.shp 042894.dgn
+
+2-  COMANDO OGR PARA CONVERTER GEOMETRIAS DE LINHA
+
+ogr2ogr -f "ESRI Shapefile" -where "OGR_GEOMETRY='LineString'" -f "ESRI Shapefile" -skipfailures convertido_linhas.shp <nome_arquivo_dgn>.dgn
