@@ -2,3 +2,7 @@
 FILTRO QGIS PARA SELECIONAR BACIAS NUMAREGIAO PARA APLICAR PGHYDRO
 
  "cobacia" like '771%' AND  "dsversao" = 'BHO bho_2017_v_01_05_5k de 2018-06-20' 
+
+
+"cobacia" >= '<cobacia>'
+AND "cobacia LIKE "<cocursodag>%'
