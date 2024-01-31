@@ -28,3 +28,9 @@ pip install pyproj
 
 # instala spyder
 conda install spyder -c conda-forge
+
+# CORRIGE PYPROJ... :/
+import pyproj
+pyproj_path = os.path.dirname(pyproj.__file__) + '/crs'
+pyproj.datadir.get_data_dir()
+pyproj.datadir.set_data_dir(pyproj_path)
