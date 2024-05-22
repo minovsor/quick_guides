@@ -1,0 +1,17 @@
+#1. cria um ambiente de trabalho novo só pra isso
+conda create --name env_cmip6
+
+#2. ativa o ambiente novo, com um python padrão.
+conda activate env_cmip6
+
+# possivelmente teu erro estava a essa biblioteca OSGEO/GDAL, vamos instalar
+conda install gdal -c conda-forge
+
+# mas outras bibliotecas são necessárias, vamos instalar
+conda install matplotlib numpy rasterio pandas xarray zarr gcsfs cftime nc-time-axis func_timeout openpyxl netcdf4 pyarrow jupyterlab spyder -c conda-forge
+
+# atualiza tudo
+conda upgrade --all
+
+# mais uma biblioteca boba (pra ver o progresso dos downloads)
+pip install tdqm
