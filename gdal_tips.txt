@@ -1,0 +1,43 @@
+!---------------------------------------------------------
+! INFORMACOES DO RASTER
+!---------------------------------------------------------
+gdalinfo -stats path/to/raster/file.tif
+
+
+!---------------------------------------------------------
+! COMO SUBSTITUIR NODATA (VALOR DEVE SER CONHECIDO)
+!---------------------------------------------------------
+gdal_calc -A <input.tif> --outfile=<output.tif>
+--calc="A*(A!=nodata_value) + (A==nodata_value)*new_value" --NoDataValue=0
+
+
+!---------------------------------------------------------
+! CONFIGURA O VALOR DE NODATA DO RASTER (NÃO ALTERA VALORES!)
+!---------------------------------------------------------
+!gdal_translate -a_nodata <new_nodata_value> <path/to/input/raster.tif> <path/to/output/raster.tif>
+
+!---------------------------------------------------------
+! CONVERTE FORMATO
+!---------------------------------------------------------
+! exemplo para ASC
+gdal_translate -a_srs EPSG:4326 -a_nodata -9999.0 -of AAIGrid <input.tif> <output.asc>
+
+! substitui valores menores que zero, por zero
+gdal_calc -A clip_whitebox_fil.tif --outfile=fil.tif --calc="A*(A>0) + (A<=0)*0" --NoDataValue=0
+
+
+!---------------------------------------------------------
+! UTILIZA RASTER WATERSHED COMO MASCARA (<=0), ALTERANDO PARA -9999 E SETANDO NODATA
+!---------------------------------------------------------
+
+gdal_calc -A watershed.tif --outfile=clip_watershed.tif --calc="A*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+gdal_calc -A watershed.tif -B fil_wangliu.tif --outfile=clip_fil.tif --calc="B*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+gdal_calc -A watershed.tif -B fdr.tif --outfile=clip_fdr.tif --calc="B*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+gdal_calc -A watershed.tif -B fac.tif --outfile=clip_fac.tif --calc="B*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+gdal_calc -A watershed.tif -B str_2110.tif --outfile=clip_str_2110.tif --calc="B*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+gdal_calc -A watershed.tif -B watershed_outlets.tif --outfile=clip_watershed_outlets.tif --calc="B*(A>0) + (A<=0)*-9999" --NoDataValue=-9999
+
+
+!
+gdal_calc -A watershed.tif -B lnk_whitebox_2110.tif --outfile=clip_catchments.tif --calc="B*(A>0) + (A<=0)*0" --NoDataValue=0
+gdal_calc -A watershed.tif -B subbasins_whitebox_2110.tif --outfile=clip_catchments.tif --calc="B*(A>0) + (A<=0)*0" --NoDataValue=0
